@@ -17,14 +17,14 @@ useEffect(() => {
   fetch('http://localhost:4000/items')
     .then(response => response.json())
     .then(data => {
-      console.log('Data from server:', data);
+      console.log(data);
       setItems(data);
-      console.log('Items state:', items);
     })
     .catch(error => console.error(error));
-}, []);
+}, []); 
 
-  console.log(items)
+
+  
 
     console.log(userInput)
   return (
