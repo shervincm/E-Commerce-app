@@ -29,6 +29,8 @@ return (
         <button onClick={backClick}> previous image </button>
         <img src={itemImage[currentImageIndex].url} alt={selectedItem.title}/>
         <button onClick={handleClick}> next image </button> 
+        <p>{selectedItem.title}</p>
+        <p>£{selectedItem.price}</p>
     </div>
 )
 

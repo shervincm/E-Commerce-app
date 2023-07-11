@@ -34,7 +34,7 @@ function App() {
         <Search userInput={userInput} onChange={onChange} />
         <Filter />
         <Routes>
-          <Route path="/" element={<Items items={items} />} />
+          <Route path="/" element={<Items items={items} userInput={userInput} onChange={onChange} />} />
           <Route path="/items/:id/overview" element={<ItemOverview items={items} />} />
         </Routes>
       </div>
