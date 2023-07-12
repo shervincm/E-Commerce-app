@@ -1,66 +1,90 @@
-import React from 'react';
-import './app.css';
-import Search from '../Search/search.js';
-import Filter from '../Filter/filter.js';
-import Items from '../Items/items.js';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import "./app.css";
+import Search from "../Search/search";
+import Filter from "../Filter/filter";
+import Items from "../Items/items";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemOverview from '../ItemOverview/itemOverview.js';
+import ItemOverview from "../ItemOverview/itemOverview";
 
 function App() {
-  const [userInput, setUserInput] = useState('')
-  const onChange = (e) => {
-    setUserInput(e.target.value)
+  // use state to store the user input
+  const [userInput, setUserInput] = useState("");
+  // use state to store the data from API
+  const [items, setItems] = useState([]);
+  // use state to store the selected filter for demographic
+  const [selectedFilter, setSelectedFilter] = useState("Shop By");
+  // use state to store the selected filter for item type
+  const [selectedItemTypeFilter, setSelectedItemTypeFilter] = useState("Item");
+
+  // function to update the user input that is passed down to search component
+  function onChange(e) {
+    setUserInput(e.target.value);
   }
 
-  const [items, setItems] = useState([])
+  // function to update the selected filter that is passed down to filter component
+  function filterChange(filterValue) {
+    setSelectedFilter(filterValue);
+    setSelectedItemTypeFilter("Item");
+  }
 
+  // function to update the selected filter that is passed down to filter component for item type
+  function itemTypeFilterChange(itemTypeFilterValue) {
+    setSelectedItemTypeFilter(itemTypeFilterValue);
+  }
+
+  // fetch data from API
   useEffect(() => {
-    fetch('http://localhost:4000/items')
-      .then(response => response.json())
-      .then(data => {
+    fetch("http://localhost:4000/items")
+      .then((response) => response.json())
+      .then((data) => {
         console.log(data);
         setItems(data);
       })
-      .catch(error => console.error(error));
+      .catch((error) => console.error(error));
   }, []);
-
-  // use state to store the selected filter
-  const [selectedFilter, setSelectedFilter] = useState('Shop By');
-
-  // function to update the selected filter that is passed down to filter component
-  function filterChange (filterValue) {
-    setSelectedFilter(filterValue);
-  }
 
   // filter items based on the selected filter
   const filteredItems = items.filter((item) => {
-    if (selectedFilter === 'Shop By') {
+    if (selectedFilter === "Shop By") {
       return true;
     } else {
       return item.demographic === selectedFilter;
+    }
+  }).filter((item) => {
+    if (selectedItemTypeFilter === "Item") {
+      return true;
+    } else {
+      return item.itemType === selectedItemTypeFilter;
     }
   });
 
   // filter items based on the user input
   const displayedItems = filteredItems.filter((item) => {
     return item.title.toLowerCase().includes(userInput.toLowerCase());
+  }).filter((item) => {
+    if (selectedItemTypeFilter === "Item") {
+      return true;
+    } else {
+      return item.itemType === selectedItemTypeFilter;
+    }
   });
 
-  
-
-  console.log(userInput)
+  // filter clothing items based on the user input
+  const displayedClothingItems = filteredItems.filter((item) => {
+    return item.title.toLowerCase().includes(userInput.toLowerCase());
+  }).filter((item) => {
+    return item.itemType === "Clothing";
+  });
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <h1>DJ</h1>
-        <Search userInput={userInput} onChange={onChange} />
-        <Filter filterChange={filterChange}/>
-        <Routes>
-          <Route path="/" element={<Items items={items} userInput={userInput} onChange={onChange} displayedItems={displayedItems} />} />
-          <Route path="/items/:id/overview" element={<ItemOverview items={items} />} />
-        </Routes>
+      <div className="app">
+         <Search onChange={onChange} userInput={userInput} />
+         <Filter filterChange={filterChange} itemTypeFilterChange={itemTypeFilterChange} />
+         <Routes>
+            <Route path="/" element={<Items items={items} displayedItems={displayedItems} displayedClothingItems={displayedClothingItems} userInput={userInput} />} />
+            <Route path="/items/:itemId/overview" element={<ItemOverview />} />
+         </Routes>
       </div>
     </BrowserRouter>
   );
