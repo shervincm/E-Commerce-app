@@ -25,6 +25,29 @@ function App() {
       .catch(error => console.error(error));
   }, []);
 
+  // use state to store the selected filter
+  const [selectedFilter, setSelectedFilter] = useState('Shop By');
+
+  // function to update the selected filter that is passed down to filter component
+  function filterChange (filterValue) {
+    setSelectedFilter(filterValue);
+  }
+
+  // filter items based on the selected filter
+  const filteredItems = items.filter((item) => {
+    if (selectedFilter === 'Shop By') {
+      return true;
+    } else {
+      return item.demographic === selectedFilter;
+    }
+  });
+
+  // filter items based on the user input
+  const displayedItems = filteredItems.filter((item) => {
+    return item.title.toLowerCase().includes(userInput.toLowerCase());
+  });
+
+  
 
   console.log(userInput)
 
@@ -33,9 +56,9 @@ function App() {
       <div className="App">
         <h1>DJ</h1>
         <Search userInput={userInput} onChange={onChange} />
-        <Filter />
+        <Filter filterChange={filterChange}/>
         <Routes>
-          <Route path="/" element={<Items items={items} userInput={userInput} onChange={onChange} />} />
+          <Route path="/" element={<Items items={items} userInput={userInput} onChange={onChange} displayedItems={displayedItems} />} />
           <Route path="/items/:id/overview" element={<ItemOverview items={items} />} />
         </Routes>
       </div>

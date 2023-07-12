@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom";
 
 
-function Items({items, userInput, onChange}) {
+function Items({items, userInput, onChange, displayedItems}) {
   const navigate = useNavigate();
 
   function handleClick(itemId) {
@@ -10,16 +10,10 @@ function Items({items, userInput, onChange}) {
     navigate(`/items/${itemId}/overview`);
   }
 
-  const filteredItems = userInput
-    ? items.filter((item) =>
-        item.title.toLowerCase().includes(userInput.toLowerCase())
-      )
-    : items;
-
   return (
     <div className="listItems">
       <ul>
-        {filteredItems.map((item) => {
+        {displayedItems.map((item) => {
           return (
             <div key={item.id}>
               <li>
