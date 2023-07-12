@@ -79,10 +79,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
-         <Search onChange={onChange} userInput={userInput} />
-         <Filter filterChange={filterChange} itemTypeFilterChange={itemTypeFilterChange} />
          <Routes>
-            <Route path="/" element={<Items items={items} displayedItems={displayedItems} displayedClothingItems={displayedClothingItems} userInput={userInput} />} />
+         <Route path="/" element={[<Search onChange={onChange} userInput={userInput} />,
+         <Filter filterChange={filterChange} itemTypeFilterChange={itemTypeFilterChange} />,
+            <Items items={items} displayedItems={displayedItems} displayedClothingItems={displayedClothingItems} userInput={userInput} />]
+          } />
             <Route path="/items/:itemId/overview" element={<ItemOverview />} />
          </Routes>
       </div>
