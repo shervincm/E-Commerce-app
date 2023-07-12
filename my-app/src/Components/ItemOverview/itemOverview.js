@@ -1,10 +1,9 @@
-import {useParams} from 'react-router-dom';
+
 import { useState } from 'react';
 
 function ItemOverview({items}) {
-    const {id} = useParams();
 
-    const selectedItem = items.find(item => item._id === id);
+    const selectedItem = JSON.parse(localStorage.getItem("selectedItem"));
     console.log(selectedItem);
     const itemImage = selectedItem.imageURL;
     console.log(itemImage);
@@ -23,6 +22,8 @@ function ItemOverview({items}) {
     }
     console.log(currentImageIndex);
   }
+
+  
 
 return (    
     <div>

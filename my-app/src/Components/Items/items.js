@@ -5,6 +5,8 @@ function Items({items, userInput, onChange}) {
   const navigate = useNavigate();
 
   function handleClick(itemId) {
+    const selectedItem = items.find((item) => item._id === itemId);
+    localStorage.setItem("selectedItem", JSON.stringify(selectedItem));
     navigate(`/items/${itemId}/overview`);
   }
 
