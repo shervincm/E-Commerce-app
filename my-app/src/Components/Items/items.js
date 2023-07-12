@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./items.css";
 
 function Items({ items, userInput, onChange, displayedItems, displayedClothingItems }) {
   const navigate = useNavigate();
