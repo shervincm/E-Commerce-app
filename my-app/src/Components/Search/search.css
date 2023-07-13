@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    place-items: center;
+  }
+  
+  .searchBar {
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    width: 20em;
+  }
+
+  .searchBar input[type="text"] {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-left: 0.5em;
+    flex: 1;
+  }

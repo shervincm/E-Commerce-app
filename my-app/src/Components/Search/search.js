@@ -1,13 +1,14 @@
-
+import './search.css'
 
 function Search({ userInput, onChange}) {
 
     
     return (
-        <div>
+      <div className='container'>  
+        <div className="searchBar">
             <input type="text" placeholder="Search" onChange={onChange}/>
-            <button type="submit">Search</button>
         </div>
+      </div>
     )
 }
 

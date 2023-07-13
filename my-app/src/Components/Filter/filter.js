@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./filter.css";
 
 function Filter({ filterChange, itemTypeFilterChange }) {
   const [selectedItemTypeFilter, setSelectedItemTypeFilter] = useState("Item");
@@ -13,7 +14,7 @@ function Filter({ filterChange, itemTypeFilterChange }) {
   }
 
   return (
-    <div>
+    <div className="filter">
       <div className="filterBarDemographic">
         <select name="Shop by" onChange={handleClick}>
           <option>Shop By</option>

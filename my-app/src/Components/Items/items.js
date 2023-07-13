@@ -40,7 +40,10 @@ function Items({ items, userInput, onChange, displayedItems, displayedClothingIt
                   onClick={() => handleClick(item._id)}
                 />
               )}
-              {item.title} £{item.price}
+              <div className="item-info">
+                <p className="item-title">{item.title}</p>
+                <p className="item-price">£{item.price}</p>
+              </div>
             </li>
           </div>
         ))}
