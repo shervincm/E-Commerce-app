@@ -1,7 +1,7 @@
+import './itemOverview.css';
+import { useState, useEffect } from 'react';
 
-import { useState } from 'react';
-
-function ItemOverview({items}) {
+function ItemOverview({items, setCartItems, cartItems}) {
 
     const selectedItem = JSON.parse(localStorage.getItem("selectedItem"));
     console.log(selectedItem);
@@ -23,15 +23,24 @@ function ItemOverview({items}) {
     console.log(currentImageIndex);
   }
 
+  function addToCart() {
+    setCartItems([...cartItems, selectedItem]);
+  }
+
+  useEffect(() => {
+    console.log('Updated cart items:', cartItems);
+  }, [cartItems]);
+
   
 
 return (    
-    <div>
-        <button onClick={backClick}> previous image </button>
-        <img src={itemImage[currentImageIndex].url} alt={selectedItem.title}/>
-        <button onClick={handleClick}> next image </button> 
-        <p>{selectedItem.title}</p>
-        <p>£{selectedItem.price}</p>
+    <div className='itemOverview'>
+        <button onClick={backClick}> &#8249; </button>
+        <img className='item-img' src={itemImage[currentImageIndex].url} alt={selectedItem.title}/>
+        <button onClick={handleClick}> &#8250; </button> 
+        <p className='item-title'>{selectedItem.title}</p>
+        <p className='item-price'>£{selectedItem.price}</p>
+        <button className='add-to-basket' onClick={addToCart}>Add to basket</button>
     </div>
 )
 
