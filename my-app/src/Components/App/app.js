@@ -5,7 +5,8 @@ import Filter from "../Filter/filter";
 import Items from "../Items/items";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemOverview from "../ItemOverview/itemOverview";
-import Cart from "../Cart/cart";
+import CartButton from "../CartButton/cart";
+import ShoppingCart from "../ShoppingCart/shopping";
 
 function App() {
   // use state to store the user input
@@ -84,13 +85,14 @@ function App() {
     <BrowserRouter>
       <div className="app">
           <h1 className="title">Sherv Clothing</h1>
-            <Cart cartItems={cartItems} />
+            <CartButton cartItems={cartItems} />
          <Routes>
          <Route path="/" element={[<Search onChange={onChange} userInput={userInput} />,
          <Filter filterChange={filterChange} itemTypeFilterChange={itemTypeFilterChange} />,
             <Items items={items} displayedItems={displayedItems} displayedClothingItems={displayedClothingItems} userInput={userInput} />]
           } />
             <Route path="/items/:itemId/overview" element={<ItemOverview setCartItems={setCartItems} cartItems={cartItems}/>} />
+            <Route path="/cart" element={<ShoppingCart cartItems={cartItems} setCartItems={setCartItems}/>} />
          </Routes>
       </div>
     </BrowserRouter>

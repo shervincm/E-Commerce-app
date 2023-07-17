@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function Cart ({cartItems, setCartItems}){
+function Cart (){
 
     const navigate = useNavigate();
 
@@ -11,7 +11,6 @@ function Cart ({cartItems, setCartItems}){
     return (
         <div>
             <button onClick={onClick}>Shopping Cart</button>
-            <p>{cartItems.title}</p>
         </div>
     )
 }
