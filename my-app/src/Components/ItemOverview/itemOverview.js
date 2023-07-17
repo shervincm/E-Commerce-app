@@ -24,7 +24,9 @@ function ItemOverview({items, setCartItems, cartItems}) {
   }
 
   function addToCart() {
-    setCartItems([...cartItems, selectedItem]);
+    const updatedCartItems = ([...cartItems, selectedItem]);
+    setCartItems(updatedCartItems);
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
   }
 
   useEffect(() => {
