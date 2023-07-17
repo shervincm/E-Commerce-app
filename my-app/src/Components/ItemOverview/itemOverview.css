@@ -1,6 +1,31 @@
-.item-overview {
+.itemOverview {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
-
   
+  .main-image {
+    position: relative;
+  }
+  
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .grid-image {
+    max-height: 80px;
+    cursor: pointer;
+  }
+  
+  .selected {
+    border: 2px solid blue;
+  }
+  
+.item-details{
+    
+}

@@ -3,10 +3,12 @@ import "./app.css";
 import Search from "../Search/search";
 import Filter from "../Filter/filter";
 import Items from "../Items/items";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import ItemOverview from "../ItemOverview/itemOverview";
 import CartButton from "../CartButton/cart";
 import ShoppingCart from "../ShoppingCart/shopping";
+import Home from "../Home/home";
+
 
 function App() {
   // use state to store the user input
@@ -87,7 +89,6 @@ function App() {
     }
   }, []);
 
-  
 
 
   return (
@@ -95,6 +96,7 @@ function App() {
       <div className="app">
           <h1 className="title">Sherv Clothing</h1>
             <CartButton cartItems={cartItems} />
+            <Home />
          <Routes>
          <Route path="/" element={[<Search onChange={onChange} userInput={userInput} />,
          <Filter filterChange={filterChange} itemTypeFilterChange={itemTypeFilterChange} />,
