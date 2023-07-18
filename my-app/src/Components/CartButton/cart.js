@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import './cart.css';
+import trolley from '../../Images/trolley.png';
 
 function Cart (){
 
@@ -10,7 +12,7 @@ function Cart (){
 
     return (
         <div>
-            <button onClick={onClick}>Shopping Cart</button>
+            <button className='cart-button' onClick={onClick}><img src={trolley} alt='Shopping cart'/> </button>
         </div>
     )
 }

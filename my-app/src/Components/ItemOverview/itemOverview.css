@@ -1,31 +1,65 @@
-.itemOverview {
+  .itemOverview {
     display: flex;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   
   .main-image {
-    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left:10px;
+    max-width: 50%;
+    margin-right: -20px;
+  }
+
+  .item-img{
+    width: 80%;
+    height: auto;
   }
   
+  .item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0, 0, 0, 0;
+  }
+
+  .item-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+    .item-price{
+        font-size: 20px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+  
+  .add-to-basket {
+    align-self: center;
+    margin-top: 20px;
+  }
   
   .image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    position: absolute;
-    top: 0;
-    right: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allows the images to wrap to a new row */
+    justify-content: flex-start; /* Aligns the images to the left side of the container */
+    align-items: center; /* Vertically centers the images within each row */
+    margin-left: 25px;
+    margin-top: 15px
   }
   
   .grid-image {
-    max-height: 80px;
+    flex: 1 0 calc(25% - 10px); /* Sets the flex-basis to 25% minus the margin */
+    max-width: calc(15% - 10px); /* Limits the maximum width of each image to 25% minus the margin */
+    height: auto;
+    margin: 5px; /* Adds some spacing between the images */
     cursor: pointer;
   }
   
   .selected {
     border: 2px solid blue;
   }
-  
-.item-details{
-    
-}

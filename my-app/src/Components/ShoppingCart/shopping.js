@@ -1,4 +1,4 @@
-
+import './shopping.css' 
 
 function ShoppingCart ({cartItems, setCartItems, }) {
 
