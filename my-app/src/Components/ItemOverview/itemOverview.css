@@ -1,69 +1,127 @@
-  .itemOverview {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.itemOverview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .main-image {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: 10px;
-    max-width: 50%;
-    margin-top: 5%;
-  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 2vw;
+  max-width: 50%;
+  margin-top: 2vh;
+}
 
-  .item-img{
-    width: 100%;
-    height: auto;
-  }
-  
-  .item-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 5%;
-    border: solid 1px red;
-    margin-left: 5%;
-  }
+.item-img {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+}
 
-  .itemOverivew-title{
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
+.item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 2vh;
+  margin-left: 8vw;
+  align-items: center;
+}
 
-    .itemOverivew-price{
-        font-size: 20px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-  
-  .add-to-cart {
-   margin-top: auto;
-   align-self: center;
+.itemOverview-title {
+  font-size: 1.6vw;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 
-   
-  }
-  
-  .image-grid {
-    display: flex;
-    flex-wrap: wrap; /* Allows the images to wrap to a new row */
-    justify-content: flex-start; /* Aligns the images to the left side of the container */
-    align-items: center; /* Vertically centers the images within each row */
-    margin-left: 25px;
-    margin-top: 60px
-  }
-  
-  .grid-image {
-    flex: 1 0 calc(25% - 10px); /* Sets the flex-basis to 25% minus the margin */
-    max-width: calc(10% - 10px); /* Limits the maximum width of each image to 25% minus the margin */
-    height: auto;
-    margin: 5px; /* Adds some spacing between the images */
-    cursor: pointer;
-  }
-  
-  .selected {
-    border: 2px solid blue;
-  }
+.itemOverivew-price {
+  font-size: 1vw;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+}
+
+.quantity button {
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-size: 2vw;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.quantity button:hover {
+  color: #666;
+}
+
+.quantity span {
+  font-size: 1.6vw;
+  margin: 0 1vw;
+}
+
+.add-to-cart {
+  margin-top: auto;
+  align-self: center;
+  font-size: 1vw;
+  background-color:#2d9cdb;
+  border: none;
+  color: white;
+  padding: 0.3vw 1vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2vw;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #3e8e41;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 2.5vw;
+}
+
+.grid-image {
+  flex: 1 0 calc(25% - 1vw);
+  max-width: calc(10% - 1vw);
+  height: auto;
+  margin: 1vw;
+  cursor: pointer;
+}
+
+.selected {
+  border: 0.2vw solid blue;
+}
+
+.next-button, .back-button {
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-size: 2vw;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.next-button:hover, .back-button:hover {
+  color: #666;
+}
+
+.next-button {
+  margin-left: auto;
+}
+
+.back-button {
+  margin-right: auto;
+}

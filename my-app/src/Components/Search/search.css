@@ -14,8 +14,8 @@
   width: 50%;
 }
 
-.searchBar input[type="text"] {
-  font-size: 1vw;
+.searchBar input{
+  font-size: 1.3vw;
   border: none;
   outline: none;
   background-color: transparent;

@@ -37,25 +37,35 @@ function ShoppingCart ({cartItems, setCartItems, }) {
         return total + item.price * item.quantity;
         }, 0);
 
+        function renderMessage() {
+          if (cartItems.length === 0) {
+            return <p>Your shopping cart is empty!</p>;
+          } else if (totalPrice === 0) {
+            return <p>Your cart is currently empty!</p>;
+          } else {
+            return <p className='shoppingCart-total'>Total Price: £{totalPrice}</p>;
+          }
+        }
+
     return (
         <div>
-            <ul>
+            <ul className='shoppingCart-list'>
                 {cartItems.map((item) => {
                     const quantityMessage = item.quantity === 1 ? "Quantity X 1" : `Quantity X ${item.quantity} `;
                     return (
-                        <li key={item.id}>
-                            <img src={item.imageURL[0].url} alt={item.title} />
-                            <p>{item.title}</p>
-                            <button onClick={() => itemDecrease(item._id)}>+</button>
-                            <p>{quantityMessage}</p>
-                            <button onClick={() => itemIncrease(item._id)}>-</button>
-                            <p>£{item.price}</p>
-                            <button onClick={() =>handleDelete(item._id)}>Remove</button>
+                        <li className='shoppingCart-item' key={item.id}>
+                            <img className='shoppingCart-img' src={item.imageURL[0].url} alt={item.title} />
+                            <p className='shoppingCart-text'>{item.title}</p>
+                            <button className='shoppingButton-decrease' onClick={() => itemIncrease(item._id)}>-</button>
+                            <p className='shoppingCart-quantity'>{quantityMessage}</p>
+                            <button className='shoppingButton-increase' onClick={() => itemDecrease(item._id)}>+</button>
+                            <p className='shoppingCart-price'>£{item.price}</p>
+                            <button className='shoppingButton-remove' onClick={() =>handleDelete(item._id)}>Remove</button>
                         </li>
                     )
                 })}     
             </ul>
-            <p>Total Price: £{totalPrice}</p>
+            <p className='shoppingCart-total'>{renderMessage()}</p>
         </div>
     )
 }

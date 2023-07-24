@@ -1,0 +1,65 @@
+.shoppingCart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .shoppingCart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5vh;
+    padding: 2vw;
+  }
+  
+  .shoppingCart-img {
+    width: 20vw;
+    height: auto;
+    margin-right: 2vw;
+  }
+  
+  .shoppingCart-text {
+    margin: 0;
+    font-size: 1.5vw;
+  }
+  
+  .shoppingButton-decrease,
+.shoppingButton-increase,
+.shoppingButton-remove {
+  background-color: #f4f4f4;
+  border: none;
+  color: #333;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shoppingButton-decrease:hover,
+.shoppingButton-increase:hover,
+.shoppingButton-remove:hover {
+  background-color: #ddd;
+}
+  .shoppingCart-quantity,
+  .shoppingCart-price {
+    margin: 0;
+    font-size: 1.5vw;
+  }
+  
+  .shoppingCart-item :first-child {
+    margin-top: auto;
+  }
+  
+  .shoppingCart-item :last-child {
+    margin-bottom: auto;
+  }
+  
+  .shoppingCart-total {
+    margin-top: 5vh;
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+  }
