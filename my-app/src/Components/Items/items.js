@@ -30,7 +30,7 @@ function Items({ items, userInput, onChange, displayedItems, displayedClothingIt
           </div>
         ))}
         {displayedItems.map((item) => (
-          <div key={item.id}>
+          <div className='products' key={item.id}>
             <li>
               {item.imageURL && item.imageURL[0] && (
                 <img

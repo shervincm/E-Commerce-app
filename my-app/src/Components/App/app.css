@@ -1,13 +1,29 @@
-h1 {
-    display: grid;
-    justify-items: center;
-    font-size: 4rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    color: #fff;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(to right, #f00, #fc0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.title {
+  position: relative;
+  font-size: 4vw;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.2em;
+  color: #2d9cdb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  right: 0;
+  border-bottom: 0.5rem solid #2d9cdb;
+  z-index: -1;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.title:hover::before {
+  transform: scaleX(1);
+}
+

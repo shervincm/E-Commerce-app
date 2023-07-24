@@ -66,10 +66,10 @@ return (
           
        </div>
         <div className='item-details'>
-        <p className='item-title'>{selectedItem.title}</p>
-        <p className='item-price'>£{selectedItem.price}</p>
+        <p className='itemOverview-title'>{selectedItem.title}</p>
+        <p className='itemOverivew-price'>£{selectedItem.price}</p>
+        <button className='add-to-cart' onClick={addToCart}>Add to cart</button>
         </div>
-        <button className='add-to-basket' onClick={addToCart}>Add to basket</button>
     <div className='image-grid'>
       {itemImage.map((image, index) => (
         <img
