@@ -19,10 +19,11 @@
 
 .listItems img {
   width: 90%;
-  height: auto;
+  height: 75%;
   justify-self: center;
   align-self: center;
   cursor: pointer;
+  object-fit: cover;
 }
 
 .item-info {
@@ -34,31 +35,41 @@
 }
 
 .item-title {
-  font-size: 18px;
+  font-size: 1vw;
   font-weight: bold;
 }
 
 .item-price {
-  font-size: 16px;
+  font-size: 0.8vw;
   color: black;
 }
 
-@media screen and (max-width: 768px) {
+/* adjust the width and font size for smaller screens */
+@media screen and (max-width: 1240px) {
+  .products {
+    width: 50%;
+  }
+  
   .item-title {
-    font-size: 16px; /* reduce the font size for smaller screens */
+    font-size: 2.5vw;
   }
   
   .item-price {
-    font-size: 14px; /* reduce the font size for smaller screens */
+    font-size: 1.5vw;
   }
 }
 
-@media screen and (max-width: 480px) {
+/* adjust the width and font size for even smaller screens */
+@media screen and (max-width: 768px) {
+  .products {
+    width: 100%;
+  }
+  
   .item-title {
-    font-size: 14px; /* reduce the font size further for even smaller screens */
+    font-size: 4vw;
   }
   
   .item-price {
-    font-size: 12px; /* reduce the font size further for even smaller screens */
+    font-size: 2vw;
   }
 }

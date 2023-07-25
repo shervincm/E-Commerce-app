@@ -34,3 +34,29 @@
   select:hover {
     box-shadow: 0 0 1vw rgba(0, 0, 0, 0.2);
   }
+
+
+  @media screen and (max-width: 768px) {
+    .filter {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1vw;
+    }
+    
+    .filterBarDemographic {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+    
+    .filterBarItem {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+    
+    select {
+      font-size: 2vw;
+      border-radius: 1vw;
+      margin-right: 1vw;
+    }
+  }
