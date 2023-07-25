@@ -54,7 +54,8 @@ function App() {
     if (selectedFilter === "Shop By") {
       return true;
     } else {
-      return item.demographic === selectedFilter;
+      // Check if the selected filter is included in the demographic array
+      return item.demographic.includes(selectedFilter);
     }
   }).filter((item) => {
     if (selectedItemTypeFilter === "Item") {

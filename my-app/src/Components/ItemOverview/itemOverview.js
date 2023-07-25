@@ -70,6 +70,7 @@ function ItemOverview({items, setCartItems, cartItems, modal, setModal}) {
             <div className='item-details'>
                 <p className='itemOverview-title'>{selectedItem.title}</p>
                 <p className='itemOverivew-price'>£{selectedItem.price}</p>
+                <p className='itemOverview-description'>{selectedItem.description}</p>
                 <div className='quantity'>
                     <button onClick={() => setQuantity(Math.max(quantity - 1, 1))}>-</button>
                     <span>{quantity}</span>
@@ -81,7 +82,7 @@ function ItemOverview({items, setCartItems, cartItems, modal, setModal}) {
               <div className='modal'>
                 <div className='modal-content'>
                   <button className='modal-close' onClick={alertMessage}>X</button>
-                  <p>Item added to cart!</p>
+                  <p>Added to cart!</p>
                 </div>
               </div>
             )}

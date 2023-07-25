@@ -26,6 +26,7 @@
   margin-top: 2vh;
   margin-left: 8vw;
   align-items: center;
+  width: 35vw;
 }
 
 .itemOverview-title {
@@ -37,8 +38,14 @@
 
 .itemOverivew-price {
   font-size: 1vw;
-  margin-top: 0px;
+  margin-top: 0.8vw;
   margin-bottom: 0px;
+}
+
+.itemOverview-description {
+  font-size: 1vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .quantity {
@@ -68,7 +75,6 @@
 }
 
 .add-to-cart {
-  margin-top: auto;
   align-self: center;
   font-size: 1vw;
   background-color:#2d9cdb;
