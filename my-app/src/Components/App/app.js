@@ -38,16 +38,16 @@ function App() {
     setSelectedItemTypeFilter(itemTypeFilterValue);
   }
 
-  // fetch data from API
-  useEffect(() => {
-    fetch("https://ecommerce-backend-20h8.onrender.com")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setItems(data);
-      })
-      .catch((error) => console.error(error));
-  }, []);
+ // fetch data from API
+ useEffect(() => {
+  fetch("https://ecommerce-backend-20h8.onrender.com/api/items")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      setItems(data);
+    })
+    .catch((error) => console.error(error));
+}, []);
 
   // filter items based on the selected filter
   const filteredItems = items.filter((item) => {
