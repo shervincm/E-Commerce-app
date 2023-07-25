@@ -158,28 +158,27 @@
 }
 
 .modal p {
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 2vw;
-  color: white;
+  margin-bottom: 2rem;
+  color: #fff;
 }
 
 .modal-close {
   font-weight: bold;
-  background-color: red;
-  color: white;
+  background-color: #ff5252;
+  color: #fff;
   border: none;
   cursor: pointer;
-  padding: 0;
   align-self: flex-end;
-  border-radius: 0.5vw;
-  padding: 0.3vw;
-  font-size: 0.7vw;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  font-size: 0.7rem;
 }
 
 .modal-close:hover {
   font-weight: bold;
-  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 760px) {
