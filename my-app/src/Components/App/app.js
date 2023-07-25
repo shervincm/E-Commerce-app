@@ -40,7 +40,7 @@ function App() {
 
  // fetch data from API
  useEffect(() => {
-  fetch("https://ecommerce-backend-20h8.onrender.com")
+  fetch("https://ecommerce-backend-20h8.onrender.com/items")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
