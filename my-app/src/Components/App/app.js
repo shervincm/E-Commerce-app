@@ -40,7 +40,7 @@ function App() {
 
   // fetch data from API
   useEffect(() => {
-    fetch("http://localhost:4000/items")
+    fetch("hhttps://ecommerce-demo-sherv-61ac11c0fd58.herokuapp.com/")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
