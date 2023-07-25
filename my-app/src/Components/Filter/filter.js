@@ -11,6 +11,7 @@ function Filter({ filterChange, itemTypeFilterChange }) {
   function handleItemType(event) {
     setSelectedItemTypeFilter(event.target.value);
     itemTypeFilterChange(event.target.value);
+    console.log(selectedItemTypeFilter)
   }
 
   return (

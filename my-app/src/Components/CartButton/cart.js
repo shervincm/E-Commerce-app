@@ -11,6 +11,8 @@ function Cart({ cartItems }) {
     navigate(`/cart`);
   }
 
+  console.log(showMessage);
+
   useEffect(() => {
     // Show the message for 3 seconds when a new item is added
     if (cartItems.length > 0) {
