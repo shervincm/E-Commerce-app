@@ -3,7 +3,7 @@ import "./app.css";
 import Search from "../Search/search";
 import Filter from "../Filter/filter";
 import Items from "../Items/items";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemOverview from "../ItemOverview/itemOverview";
 import CartButton from "../CartButton/cart";
 import ShoppingCart from "../ShoppingCart/shopping";
