@@ -19,6 +19,8 @@ function App() {
   const [selectedFilter, setSelectedFilter] = useState("Shop By");
   // use state to store the selected filter for item type
   const [selectedItemTypeFilter, setSelectedItemTypeFilter] = useState("Item");
+  // use state to store the modal
+  const [modal, setModal] = useState(false);
 
   // function to update the user input that is passed down to search component
   function onChange(e) {
@@ -102,7 +104,7 @@ function App() {
          <Filter filterChange={filterChange} itemTypeFilterChange={itemTypeFilterChange} />,
             <Items items={items} displayedItems={displayedItems} displayedClothingItems={displayedClothingItems} userInput={userInput} />]
           } />
-            <Route path="/items/:itemId/overview" element={<ItemOverview setCartItems={setCartItems} cartItems={cartItems}/>} />
+            <Route path="/items/:itemId/overview" element={<ItemOverview setCartItems={setCartItems} cartItems={cartItems} modal={modal} setModal={setModal}/>} />
             <Route path="/cart" element={<ShoppingCart cartItems={cartItems} setCartItems={setCartItems}/>} />
          </Routes>
       </div>

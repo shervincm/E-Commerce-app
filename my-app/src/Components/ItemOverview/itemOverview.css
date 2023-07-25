@@ -45,6 +45,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 1vh;
+  flex-direction: row;
+  
 }
 
 .quantity button {
@@ -124,4 +126,52 @@
 
 .back-button {
   margin-right: auto;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #2d9cdb;
+  border-radius: 1vw;
+  max-width: 90vw;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal p {
+  font-size: 1.5vw;
+  font-weight: bold;
+  margin-bottom: 2vw;
+  color: white;
+}
+
+.modal-close {
+  font-weight: bold;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  align-self: flex-end;
+  border-radius: 0.5vw;
+  padding: 0.3vw;
+  font-size: 0.7vw;
+}
+
+.modal-close:hover {
+  font-weight: bold;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.5);
 }

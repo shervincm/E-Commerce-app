@@ -1,7 +1,7 @@
 import './itemOverview.css';
 import { useState, useEffect } from 'react';
 
-function ItemOverview({items, setCartItems, cartItems}) {
+function ItemOverview({items, setCartItems, cartItems, modal, setModal}) {
 
     const selectedItem = JSON.parse(localStorage.getItem("selectedItem"));
     console.log(selectedItem);
@@ -42,13 +42,23 @@ function ItemOverview({items, setCartItems, cartItems}) {
             setCartItems(updatedCartItems);
             localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
         }
-        alert("Added to your cart!");
         setQuantity(1);
     }
 
     useEffect(() => {
         console.log('Updated cart items:', cartItems);
     }, [cartItems]);
+
+
+    const alertMessage = () => {
+      setModal(!modal);
+    }
+
+    function addedToCart() {
+        alertMessage();
+        addToCart();
+    }
+
 
     return (    
         <div className='itemOverview'>
@@ -61,12 +71,20 @@ function ItemOverview({items, setCartItems, cartItems}) {
                 <p className='itemOverview-title'>{selectedItem.title}</p>
                 <p className='itemOverivew-price'>£{selectedItem.price}</p>
                 <div className='quantity'>
-                    <button onClick={() => setQuantity(quantity - 1)}>-</button>
+                    <button onClick={() => setQuantity(Math.max(quantity - 1, 1))}>-</button>
                     <span>{quantity}</span>
                     <button onClick={() => setQuantity(quantity + 1)}>+</button>
                 </div>
-                <button className='add-to-cart' onClick={addToCart}>Add to cart</button>
+                <button className='add-to-cart' onClick={addedToCart} >Add to cart</button>
             </div>
+            {modal && (
+              <div className='modal'>
+                <div className='modal-content'>
+                  <button className='modal-close' onClick={alertMessage}>X</button>
+                  <p>Item added to cart!</p>
+                </div>
+              </div>
+            )}
             <div className='image-grid'>
                 {itemImage.map((image, index) => (
                     <img
