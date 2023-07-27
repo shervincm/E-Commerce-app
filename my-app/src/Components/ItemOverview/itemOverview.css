@@ -150,7 +150,7 @@
   background-color: #2d9cdb;
   border-radius: 1vw;
   max-width: 90vw;
-  padding: 10px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -172,13 +172,15 @@
   cursor: pointer;
   align-self: flex-end;
   border-radius: 0.5rem;
-  padding: 0.3rem;
-  font-size: 0.7rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .modal-close:hover {
   font-weight: bold;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  transform: translateY(-0.1rem);
 }
 
 @media screen and (max-width: 760px) {

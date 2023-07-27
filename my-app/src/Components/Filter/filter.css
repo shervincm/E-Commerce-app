@@ -11,12 +11,14 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 1vw;
+    cursor: pointer;
   }
   
   .filterBarItem {
     display: flex;
     justify-content: flex-end;
     margin-right: 1vw;
+    cursor: pointer;
   }
   
   select {
