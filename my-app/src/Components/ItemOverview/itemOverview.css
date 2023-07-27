@@ -147,7 +147,7 @@
 }
 
 .modal-content {
-  background-color: white;
+  background-color: #2d9cdb;
   border-radius: 1vw;
   max-width: 90vw;
   padding: 10px;
@@ -161,7 +161,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
-  color: #2d9cdb;
+  color: #fff;
 }
 
 .modal-close {
